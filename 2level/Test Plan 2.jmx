@@ -12,7 +12,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="hm" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="hm" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -72,16 +72,35 @@
           <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Put" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="UserId" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;userId&quot;: 2,&#xd;
-  &quot;id&quot;: 2,&#xd;
-  &quot;title&quot;: &quot;test&quot;,&#xd;
-  &quot;body&quot;: &quot;test&quot;}</stringProp>
+                <stringProp name="Argument.value">20</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">UserId</stringProp>
+              </elementProp>
+              <elementProp name="id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">20</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">id</stringProp>
+              </elementProp>
+              <elementProp name="title" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">test title</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">title</stringProp>
+              </elementProp>
+              <elementProp name="body" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">body</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
@@ -102,7 +121,7 @@
         <hashTree>
           <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
-            <stringProp name="SizeAssertion.size">1000</stringProp>
+            <stringProp name="SizeAssertion.size">1100</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
           </SizeAssertion>
           <hashTree/>
@@ -360,10 +379,10 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">2</stringProp>
+          <stringProp name="LoopController.loops">3</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5000</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">2</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1500</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -399,13 +418,13 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
             <stringProp name="SizeAssertion.size">29000</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
           </SizeAssertion>
           <hashTree/>
-          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
             <longProp name="html_assertion_error_threshold">0</longProp>
             <longProp name="html_assertion_warning_threshold">0</longProp>
             <stringProp name="html_assertion_doctype">omit</stringProp>
@@ -444,7 +463,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
             <stringProp name="SizeAssertion.size">1000</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
@@ -460,7 +479,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
             <longProp name="html_assertion_error_threshold">0</longProp>
             <longProp name="html_assertion_warning_threshold">0</longProp>
             <stringProp name="html_assertion_doctype">omit</stringProp>
@@ -499,9 +518,9 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
-            <stringProp name="SizeAssertion.size">1100</stringProp>
+            <stringProp name="SizeAssertion.size">11000</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
           </SizeAssertion>
           <hashTree/>
@@ -515,7 +534,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
             <longProp name="html_assertion_error_threshold">0</longProp>
             <longProp name="html_assertion_warning_threshold">0</longProp>
             <stringProp name="html_assertion_doctype">omit</stringProp>
@@ -554,7 +573,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
             <stringProp name="SizeAssertion.size">1300</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
@@ -570,7 +589,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
             <longProp name="html_assertion_error_threshold">0</longProp>
             <longProp name="html_assertion_warning_threshold">0</longProp>
             <stringProp name="html_assertion_doctype">omit</stringProp>
@@ -599,7 +618,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
             <stringProp name="SizeAssertion.size">980</stringProp>
             <intProp name="SizeAssertion.operator">6</intProp>
@@ -615,7 +634,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
             <longProp name="html_assertion_error_threshold">0</longProp>
             <longProp name="html_assertion_warning_threshold">0</longProp>
             <stringProp name="html_assertion_doctype">omit</stringProp>
